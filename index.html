@@ -1,16 +1,83 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#171310"><meta name="description" content="NovaEssence: fragancias inspiradas, seleccionadas para ti y disponibles por mililitros."><link rel="stylesheet" href="styles.css"><title>NovaEssence | Tu esencia, tu historia</title></head><body>
-<div class="announcement">Envíos en Ecuador · Atención personalizada por WhatsApp</div>
-<header><a class="logo" href="#inicio">NOVA<span>ESSENCE</span></a><nav><a href="#catalogo">Catálogo</a><a href="#como-funciona">Cómo comprar</a></nav><button id="cartBtn" class="cart-btn">Bolsa <b id="cartCount">0</b></button></header>
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#171310">
+ <meta name="description" content="Nova Essence: fragancias inspiradas de 55 ml por $21. Pago contra entrega en Cuenca y envíos a otras ciudades del Ecuador.">
+ <link rel="stylesheet" href="styles.css">
+ <title>NovaEssence | Tu esencia, tu historia</title>
+</head>
+<body>
+<div class="announcement">Pago contra entrega en Cuenca · Envíos nacionales · Atención personalizada</div>
+<header>
+ <a class="logo" href="#inicio">NOVA<span>ESSENCE</span></a>
+ <nav aria-label="Navegación principal"><a href="#catalogo">Catálogo</a><a href="#historia">Nuestra historia</a><a href="#como-funciona">Cómo comprar</a></nav>
+ <button id="cartBtn" class="cart-btn" type="button" aria-controls="cart">Mi selección <b id="cartCount">0</b></button>
+</header>
 <main id="inicio">
- <section class="hero"><img src="assets/hero.png" alt="Colección original de frascos NovaEssence"><div class="hero-copy"><p class="overline">FRAGANCIAS INSPIRADAS · DESDE 5 ML</p><h1>Una esencia para cada versión de ti.</h1><p>Descubre aromas memorables seleccionados por su carácter, duración y popularidad. Lujo accesible, en el tamaño que tú eliges.</p><a class="button light" href="#catalogo">Descubrir colección</a></div></section>
- <section class="trust"><div><b>10</b><span>aromas seleccionados</span></div><div><b>3</b><span>tamaños disponibles</span></div><div><b>100%</b><span>pedido personalizado</span></div></section>
- <section id="catalogo" class="catalog"><div class="section-head"><div><p class="overline">NUESTRA SELECCIÓN</p><h2>Encuentra tu próxima esencia</h2></div><p>Fragancias inspiradas en perfiles olfativos reconocidos. No son productos de las marcas mencionadas.</p></div>
-  <div class="tools"><label class="search">⌕<input id="search" placeholder="Buscar por nombre o nota..."></label><div class="filters"><button class="active" data-filter="Todos">Todos</button><button data-filter="Mujer">Mujer</button><button data-filter="Hombre">Hombre</button><button data-filter="Unisex">Unisex</button></div></div>
+ <section class="hero">
+  <img src="assets/hero.png" alt="Colección de fragancias inspiradas NovaEssence">
+  <div class="hero-copy">
+   <p class="overline">FRAGANCIAS INSPIRADAS · 55 ML · $21</p>
+   <h1>Una esencia para cada versión de ti.</h1>
+   <p>Descubre aromas memorables seleccionados para acompañar tu estilo, tus momentos y tu historia. Una presentación de 55 ml pensada para disfrutar todos los días.</p>
+   <a class="button light" href="#catalogo">Descubrir colección</a>
+  </div>
+ </section>
+ <section class="trust">
+  <div><b>55 ml</b><span>una sola presentación</span></div>
+  <div><b>$21</b><span>precio por fragancia</span></div>
+  <div><b>Cuenca</b><span>pago contra entrega</span></div>
+ </section>
+ <section id="catalogo" class="catalog">
+  <div class="section-head">
+   <div><p class="overline">NUESTRA SELECCIÓN</p><h2>Encuentra tu próxima esencia</h2></div>
+   <p>Explora 4 fragancias para hombre, 4 para mujer y 2 unisex. Las marcas mencionadas se utilizan únicamente como referencia olfativa.</p>
+  </div>
+  <div class="tools">
+   <label class="search">⌕<input id="search" aria-label="Buscar una fragancia" placeholder="Buscar por nombre o nota..."></label>
+   <div class="filters" aria-label="Filtrar por categoría"><button class="active" type="button" data-filter="Todos" aria-pressed="true">Todos · 10</button><button type="button" data-filter="Mujer" aria-pressed="false">Mujer · 4</button><button type="button" data-filter="Hombre" aria-pressed="false">Hombre · 4</button><button type="button" data-filter="Unisex" aria-pressed="false">Unisex · 2</button></div>
+  </div>
   <div id="products" class="products"></div>
  </section>
- <section id="como-funciona" class="steps"><p class="overline">FÁCIL Y PERSONAL</p><h2>Tu perfume en tres pasos</h2><div class="step-grid"><article><i>01</i><h3>Elige tu esencia</h3><p>Explora notas, estilo y ocasión de cada fragancia.</p></article><article><i>02</i><h3>Selecciona los ml</h3><p>Prueba 5 ml, lleva 10 ml o disfruta 30 ml.</p></article><article><i>03</i><h3>Pide por WhatsApp</h3><p>Confirma disponibilidad, entrega y forma de pago.</p></article></div></section>
- <section class="cta"><p class="overline">¿NO SABES CUÁL ELEGIR?</p><h2>Te ayudamos a encontrar tu aroma ideal.</h2><a class="button dark" href="https://wa.me/593998267804?text=Hola%20NovaEssence%2C%20quiero%20asesor%C3%ADa%20para%20elegir%20una%20fragancia." target="_blank" rel="noopener">Hablar con un asesor</a></section>
+ <section id="historia" class="story">
+  <div class="story-mark">20</div>
+  <div class="story-copy">
+   <p class="overline">NUESTRA HISTORIA</p>
+   <h2>Un sueño joven que comienza a dejar su esencia.</h2>
+   <p>Nova Essence comenzó con una idea sencilla: que elegir un aroma también sea una forma de expresar quién eres. Detrás de este proyecto hay un joven de 20 años que decidió convertir su gusto por las fragancias en su primer emprendimiento.</p>
+   <p>Cada pedido impulsa este sueño y nos permite seguir aprendiendo, creciendo y acercando nuevas experiencias a más personas. Por eso, cuando eliges Nova Essence, no solo llevas una fragancia: también formas parte de una historia que apenas comienza.</p>
+   <p class="story-signature">Gracias por crecer junto a nosotros.</p>
+  </div>
+ </section>
+ <section id="como-funciona" class="steps">
+  <p class="overline">FÁCIL Y PERSONAL</p>
+  <h2>Tu perfume en tres pasos</h2>
+  <div class="step-grid">
+   <article><i>01</i><h3>Elige tu esencia</h3><p>Explora las notas, el estilo y la ocasión de cada fragancia.</p></article>
+   <article><i>02</i><h3>Escríbenos</h3><p>Agrega tus favoritas a la bolsa y envía el pedido por WhatsApp.</p></article>
+   <article><i>03</i><h3>Recibe tu pedido</h3><p>Pago contra entrega en Cuenca o envío nacional, previa coordinación.</p></article>
+  </div>
+ </section>
+ <section class="cta">
+  <p class="overline">¿NO SABES CUÁL ELEGIR?</p>
+  <h2>Te ayudamos a encontrar tu aroma ideal.</h2>
+  <a class="button dark" href="https://wa.me/593998267804?text=Hola%20NovaEssence%2C%20quiero%20asesor%C3%ADa%20para%20elegir%20una%20fragancia." target="_blank" rel="noopener">Hablar con un asesor</a>
+ </section>
 </main>
-<footer><a class="logo" href="#inicio">NOVA<span>ESSENCE</span></a><p>Fragancias inspiradas · Ecuador</p><a href="https://wa.me/593998267804" target="_blank" rel="noopener">WhatsApp: 099 826 7804</a><small>NovaEssence comercializa fragancias inspiradas independientes. Las marcas citadas se usan únicamente como referencia olfativa y pertenecen a sus respectivos propietarios.</small></footer>
-<aside id="cart" class="drawer" aria-hidden="true"><div class="drawer-head"><h2>Tu selección</h2><button id="closeCart" aria-label="Cerrar">×</button></div><div id="cartItems" class="cart-items"></div><div class="drawer-foot"><div><span>Total estimado</span><strong id="cartTotal">$0,00</strong></div><button id="checkout" class="button dark full">Pedir por WhatsApp</button><small>Confirmaremos disponibilidad y entrega antes del pago.</small></div></aside><div id="backdrop" class="backdrop"></div>
-<script src="app.js"></script></body></html>
+<footer>
+ <a class="logo" href="#inicio">NOVA<span>ESSENCE</span></a>
+ <p>Fragancias inspiradas de 55 ml · Ecuador</p>
+ <a href="https://wa.me/593998267804" target="_blank" rel="noopener">WhatsApp: 099 826 7804</a>
+ <small>Pago contra entrega disponible en Cuenca. Para otras ciudades del Ecuador realizamos envíos, previa coordinación. Nova Essence comercializa fragancias inspiradas independientes; las marcas citadas se utilizan únicamente como referencia olfativa y pertenecen a sus respectivos propietarios.</small>
+</footer>
+<aside id="cart" class="drawer" aria-hidden="true">
+ <div class="drawer-head"><h2>Tu selección</h2><button id="closeCart" type="button" aria-label="Cerrar">×</button></div>
+ <div id="cartItems" class="cart-items"></div>
+ <div class="drawer-foot"><div><span>Total estimado</span><strong id="cartTotal">$0,00</strong></div><button id="checkout" class="button dark full">Pedir por WhatsApp</button><small>Confirmaremos disponibilidad y el tipo de entrega antes del pago.</small></div>
+</aside>
+<div id="backdrop" class="backdrop"></div>
+<script src="app.js"></script>
+</body>
+</html>
