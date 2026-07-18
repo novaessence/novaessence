@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://novaessence.github.io/novaessence/sitemap.xml
