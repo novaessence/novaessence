@@ -45,6 +45,22 @@
 .stock-updated{margin:0 0 30px;color:#7c7269;font-size:11px;text-align:right}
 .stock-status{display:flex;align-items:center;gap:7px;margin:12px 0 14px;color:#356548;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.035em}
 .stock-status span{width:7px;height:7px;border-radius:50%;background:#3d8a5f;box-shadow:0 0 0 3px #3d8a5f1f}
+.social-hub{padding:100px clamp(24px,7vw,110px);background:var(--ink);color:#f7f1e8}
+.social-head{text-align:center;max-width:780px;margin:0 auto 44px}
+.social-head h2{font-size:clamp(38px,5vw,62px);line-height:1.05;margin:10px 0 18px}
+.social-head>p:not(.overline){color:#c9bfb4;font-size:16px;max-width:650px;margin:0 auto}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1260px;margin:auto}
+.social-card{min-height:270px;padding:28px;display:flex;flex-direction:column;color:#f7f1e8;text-decoration:none;border:1px solid #ffffff26;background:#24201c;transition:transform .25s,border-color .25s,background .25s}
+.social-card:hover{transform:translateY(-5px);border-color:#b7955b99;background:#2c2621}
+.social-symbol{width:52px;height:52px;display:grid;place-items:center;border:1px solid #b7955b88;border-radius:50%;color:#dbc396;font:17px Georgia,serif;margin-bottom:30px}
+.social-card div{flex:1}
+.social-card small{display:block;color:#b7955b;font-size:10px;font-weight:800;letter-spacing:.18em;margin-bottom:7px}
+.social-card b{display:block;color:#fff;font:25px Georgia,serif}
+.social-card p{color:#bdb3a9;margin:8px 0 22px;font-size:13px}
+.social-card>strong{color:#f7f1e8;font-size:12px;letter-spacing:.06em}
+.social-card.instagram{background:linear-gradient(145deg,#2b2024,#211d1b)}
+.social-card.facebook{background:linear-gradient(145deg,#1d2836,#211f1d)}
+.social-card.whatsapp{background:linear-gradient(145deg,#1c3028,#211f1d)}
 .faq{display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);gap:clamp(40px,8vw,120px);padding:100px clamp(24px,8vw,120px);background:#f4ede3}
 .faq-intro{position:sticky;top:110px;align-self:start}
 .faq-intro h2{font-size:clamp(38px,5vw,60px);line-height:1.05;margin:10px 0 18px}
@@ -59,5 +75,5 @@
 .footer-links{display:flex;flex-direction:column;gap:7px;align-items:flex-start}
 .footer-links a:first-child{color:#dbc396}
 @media(max-width:1000px){.sampling{margin:55px 24px 0;grid-template-columns:1fr}}
-@media(max-width:1000px){.sampling-visual,.testing-process{grid-column:1}.faq{grid-template-columns:1fr}.faq-intro{position:static}.footer-links{align-items:center}}
-@media(max-width:650px){.trust{grid-template-columns:repeat(2,1fr);gap:18px 0}.trust div:nth-child(2){border-right:0}.sampling{margin:38px 16px 0;padding:38px 24px}.sampling-highlights article{grid-template-columns:38px 1fr}.sampling-visual img{min-height:0;height:auto;max-height:none}.sampling-visual figcaption{position:static;background:#171310;padding:20px}.sampling-visual figcaption strong{font-size:21px}.testing-process-grid article{grid-template-columns:40px 1fr}.testing-process-grid b{font-size:20px}.available-aromas-head{display:block}.available-aromas-head h3{font-size:29px}.aroma-intro{margin-top:14px}.aroma-groups{grid-template-columns:1fr}.aroma-groups article{padding:20px}.aroma-groups li{align-items:flex-start}.tester-count{margin-top:1px}.availability-guide{grid-template-columns:1fr}.availability-guide article{padding:20px}.stock-updated{text-align:left}.faq{padding:70px 24px}.faq-list summary{font-size:20px}.faq-list p{margin-right:0}}
+@media(max-width:1000px){.sampling-visual,.testing-process{grid-column:1}.social-grid{grid-template-columns:1fr}.social-card{min-height:220px}.faq{grid-template-columns:1fr}.faq-intro{position:static}.footer-links{align-items:center}}
+@media(max-width:650px){.trust{grid-template-columns:repeat(2,1fr);gap:18px 0}.trust div:nth-child(2){border-right:0}.sampling{margin:38px 16px 0;padding:38px 24px}.sampling-highlights article{grid-template-columns:38px 1fr}.sampling-visual img{min-height:0;height:auto;max-height:none}.sampling-visual figcaption{position:static;background:#171310;padding:20px}.sampling-visual figcaption strong{font-size:21px}.testing-process-grid article{grid-template-columns:40px 1fr}.testing-process-grid b{font-size:20px}.available-aromas-head{display:block}.available-aromas-head h3{font-size:29px}.aroma-intro{margin-top:14px}.aroma-groups{grid-template-columns:1fr}.aroma-groups article{padding:20px}.aroma-groups li{align-items:flex-start}.tester-count{margin-top:1px}.availability-guide{grid-template-columns:1fr}.availability-guide article{padding:20px}.stock-updated{text-align:left}.social-hub{padding:70px 20px}.social-grid{gap:12px}.social-card{min-height:0;padding:24px}.social-symbol{margin-bottom:22px}.faq{padding:70px 24px}.faq-list summary{font-size:20px}.faq-list p{margin-right:0}}
