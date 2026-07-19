@@ -1,14 +1,14 @@
 const products=[
-{id:1,name:'Horizonte',ref:'Sauvage de Dior',gender:'Hombre',notes:'Bergamota · pimienta · ambroxan',tone:'#244766',tag:'FRESCO'},
-{id:2,name:'Bleu Intense',ref:'Bleu de Chanel',gender:'Hombre',notes:'Cítricos · incienso · cedro',tone:'#193046',tag:'VERSÁTIL'},
-{id:3,name:'Velvet Noir',ref:'Good Girl',gender:'Mujer',notes:'Almendra · jazmín · cacao · tonka',tone:'#24243b',tag:'SEDUCTOR'},
-{id:4,name:'Liberté',ref:'Libre de Yves Saint Laurent',gender:'Mujer',notes:'Lavanda · flor de azahar · vainilla',tone:'#c89a42',tag:'ELEGANTE'},
-{id:5,name:'Noche Ámbar',ref:'Baccarat Rouge 540',gender:'Unisex',notes:'Azafrán · jazmín · ámbar amaderado',tone:'#a84738',tag:'ENVOLVENTE'},
-{id:6,name:'Oro Urbano',ref:'One Million',gender:'Hombre',notes:'Mandarina · canela · cuero · ámbar',tone:'#b38a33',tag:'JUVENIL'},
-{id:7,name:'Intense You',ref:'Stronger With You Intensely',gender:'Hombre',notes:'Pimienta rosa · canela · vainilla · ámbar',tone:'#744334',tag:'NOCTURNO'},
-{id:8,name:'Bella Vida',ref:'La Vie Est Belle',gender:'Mujer',notes:'Pera · iris · praliné · vainilla',tone:'#b66b7d',tag:'CLÁSICO'},
-{id:9,name:'Rosa Dulce',ref:'Yara de Lattafa',gender:'Mujer',notes:'Orquídea · frutas tropicales · vainilla · almizcle',tone:'#df9aaa',tag:'TENDENCIA'},
-{id:10,name:'Canela Real',ref:'Khamrah de Lattafa',gender:'Unisex',notes:'Canela · dátiles · praliné · vainilla · maderas',tone:'#9a5c32',tag:'ESPECIADO'}];
+{id:1,name:'Horizonte',ref:'Sauvage de Dior',gender:'Hombre',notes:'Bergamota · pimienta · ambroxan',tone:'#244766',tag:'FRESCO',stock:2},
+{id:2,name:'Bleu Intense',ref:'Bleu de Chanel',gender:'Hombre',notes:'Cítricos · incienso · cedro',tone:'#193046',tag:'VERSÁTIL',stock:2},
+{id:3,name:'Velvet Noir',ref:'Good Girl',gender:'Mujer',notes:'Almendra · jazmín · cacao · tonka',tone:'#24243b',tag:'SEDUCTOR',stock:2},
+{id:4,name:'Liberté',ref:'Libre de Yves Saint Laurent',gender:'Mujer',notes:'Lavanda · flor de azahar · vainilla',tone:'#c89a42',tag:'ELEGANTE',stock:2},
+{id:5,name:'Noche Ámbar',ref:'Baccarat Rouge 540',gender:'Unisex',notes:'Azafrán · jazmín · ámbar amaderado',tone:'#a84738',tag:'ENVOLVENTE',stock:1},
+{id:6,name:'Oro Urbano',ref:'One Million',gender:'Hombre',notes:'Mandarina · canela · cuero · ámbar',tone:'#b38a33',tag:'JUVENIL',stock:1},
+{id:7,name:'Intense You',ref:'Stronger With You Intensely',gender:'Hombre',notes:'Pimienta rosa · canela · vainilla · ámbar',tone:'#744334',tag:'NOCTURNO',stock:1},
+{id:8,name:'Bella Vida',ref:'La Vie Est Belle',gender:'Mujer',notes:'Pera · iris · praliné · vainilla',tone:'#b66b7d',tag:'CLÁSICO',stock:4},
+{id:9,name:'Rosa Dulce',ref:'Yara de Lattafa',gender:'Mujer',notes:'Orquídea · frutas tropicales · vainilla · almizcle',tone:'#df9aaa',tag:'TENDENCIA',stock:3},
+{id:10,name:'Canela Real',ref:'Khamrah de Lattafa',gender:'Unisex',notes:'Canela · dátiles · praliné · vainilla · maderas',tone:'#9a5c32',tag:'ESPECIADO',stock:2}];
 const sizeMl=55;
 const unitPrice=21;
 const productImages={1:'producto-1-horizonte.png',2:'producto-2-bleu-intense.png',3:'producto-3-velvet-noir.png',4:'producto-4-liberte.png',5:'producto-5-noche-ambar.png',6:'producto-6-oro-urbano.png',7:'producto-7-intense-you.png',8:'producto-8-bella-vida.png',9:'producto-9-rosa-dulce.png',10:'producto-10-canela-real.png'};
@@ -37,7 +37,7 @@ const money=value=>new Intl.NumberFormat('es-EC',{style:'currency',currency:'USD
 function renderProducts(){
  const query=$('#search').value.toLowerCase();
  const visible=products.filter(product=>(filter==='Todos'||product.gender===filter)&&(`${product.name} ${product.ref} ${product.notes}`.toLowerCase().includes(query)));
- $('#products').innerHTML=visible.map(product=>`<article class="product"><div class="visual" style="--tone:${product.tone}"><span class="badge">${product.tag}</span></div><div class="product-info"><span class="inspired">${product.gender.toUpperCase()} · INSPIRADO EN ${product.ref.toUpperCase()}</span><h3>${product.name}</h3><p class="notes">${product.notes}</p><div class="product-bottom"><div class="price"><span>PRECIO ÚNICO · 55 ML</span><b>$21,00</b></div></div><button class="add" type="button" data-add="${product.id}">Agregar a mi selección</button></div></article>`).join('')||'<p>No encontramos fragancias que coincidan con tu búsqueda.</p>';
+ $('#products').innerHTML=visible.map(product=>`<article class="product"><div class="visual" style="--tone:${product.tone}"><span class="badge">${product.tag}</span></div><div class="product-info"><span class="inspired">${product.gender.toUpperCase()} · INSPIRADO EN ${product.ref.toUpperCase()}</span><h3>${product.name}</h3><p class="notes">${product.notes}</p><p class="stock-status"><span></span> Entrega inmediata · ${product.stock} ${product.stock===1?'unidad':'unidades'}</p><div class="product-bottom"><div class="price"><span>PRECIO ÚNICO · 55 ML</span><b>$21,00</b></div></div><button class="add" type="button" data-add="${product.id}">Agregar a mi selección</button></div></article>`).join('')||'<p>No encontramos fragancias que coincidan con tu búsqueda.</p>';
 }
 
 function renderCart(){
