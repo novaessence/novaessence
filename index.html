@@ -20,8 +20,8 @@
  <meta name="twitter:title" content="Perfumes inspirados en Cuenca | Nova Essence">
  <meta name="twitter:description" content="Fragancias inspiradas de 55 ml por $21. Contra entrega en Cuenca.">
  <meta name="twitter:image" content="https://novaessence.github.io/novaessence/assets/hero.png">
- <link rel="stylesheet" href="styles.css?v=20260719-3">
- <link rel="stylesheet" href="enhancements.css?v=20260719-3">
+ <link rel="stylesheet" href="styles.css?v=20260721-1">
+ <link rel="stylesheet" href="enhancements.css?v=20260721-1">
  <title>Perfumes inspirados en Cuenca | Nova Essence</title>
  <script type="application/ld+json">
  {
@@ -34,7 +34,7 @@
     "name":"Nova Essence",
     "alternateName":"NovaEssence",
     "inLanguage":"es-EC",
-    "dateModified":"2026-07-19",
+    "dateModified":"2026-07-21",
     "publisher":{"@id":"https://novaessence.github.io/novaessence/#organization"}
    },
    {
@@ -142,7 +142,7 @@
  <section id="catalogo" class="catalog">
   <div class="section-head">
    <div><p class="overline">NUESTRA SELECCIÓN</p><h2>Perfumes inspirados para cada estilo</h2></div>
-   <p>Explora 4 fragancias para hombre, 4 para mujer y 2 unisex, disponibles para entrega inmediata. Las marcas mencionadas se utilizan únicamente como referencia olfativa.</p>
+   <p>Explora 4 fragancias para hombre, 4 para mujer y 2 unisex, disponibles para entrega inmediata. Selecciona “Ver aroma y ocasiones” para conocer las notas y descubrir cuándo usar cada opción.</p>
   </div>
   <div class="availability-guide" aria-label="Tipos de disponibilidad">
    <article class="ready"><span>DISPONIBLE AHORA</span><b>10 aromas en presentación de 55 ml</b><p>Unidades listas para entrega, sujetas a confirmación al momento de realizar el pedido.</p></article>
@@ -225,6 +225,34 @@
  <div class="drawer-foot"><div><span>Total estimado</span><strong id="cartTotal">$0,00</strong></div><button id="checkout" class="button dark full">Pedir por WhatsApp</button><small>Confirmaremos disponibilidad y el tipo de entrega antes del pago.</small></div>
 </aside>
 <div id="backdrop" class="backdrop"></div>
-<script src="app.js?v=20260719-3"></script>
+<section id="productModal" class="product-modal" aria-hidden="true" aria-labelledby="detailName">
+ <div id="detailBackdrop" class="detail-backdrop"></div>
+ <div class="detail-dialog" role="dialog" aria-modal="true">
+  <button id="closeDetails" class="detail-close" type="button" aria-label="Cerrar detalles">×</button>
+  <div class="detail-media">
+   <img id="detailImage" src="" alt="">
+   <span id="detailTag" class="detail-tag"></span>
+  </div>
+  <div class="detail-content">
+   <p id="detailMeta" class="detail-meta"></p>
+   <h2 id="detailName"></h2>
+   <p id="detailFamily" class="detail-family"></p>
+   <p id="detailDescription" class="detail-description"></p>
+   <div class="note-pyramid" aria-label="Evolución de las notas aromáticas">
+    <article><span>01 · SALIDA</span><p>Lo primero que percibes</p><ul id="detailTop"></ul></article>
+    <article><span>02 · CORAZÓN</span><p>La personalidad del aroma</p><ul id="detailHeart"></ul></article>
+    <article><span>03 · FONDO</span><p>La sensación que permanece</p><ul id="detailBase"></ul></article>
+   </div>
+   <div class="detail-occasion-block">
+    <h3>¿Para qué ocasiones?</h3>
+    <div id="detailOccasions" class="occasion-chips"></div>
+    <dl class="wear-guide"><div><dt>Mejor momento</dt><dd id="detailMoment"></dd></div><div><dt>Clima sugerido</dt><dd id="detailWeather"></dd></div><div><dt>Estilo</dt><dd id="detailStyle"></dd></div></dl>
+   </div>
+   <p class="detail-disclaimer">Las notas describen el perfil olfativo de referencia. La percepción puede variar según la piel. Nova Essence ofrece una fragancia inspirada independiente; no es un producto original de la marca mencionada.</p>
+   <div class="detail-actions"><button id="detailAdd" class="button dark" type="button">Agregar a mi selección · $21</button><a id="detailOrder" class="button outline" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a></div>
+  </div>
+ </div>
+</section>
+<script src="app.js?v=20260721-1"></script>
 </body>
 </html>
