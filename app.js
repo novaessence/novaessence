@@ -11,35 +11,36 @@ const products=[
 {id:10,name:'Canela Real',ref:'Khamrah de Lattafa',gender:'Unisex',notes:'Canela · dátiles · praliné · vainilla · maderas',tone:'#9a5c32',tag:'ESPECIADO',stock:2,family:'Especiada, gourmand y amaderada',description:'Una apertura de canela y nuez moscada conduce a un corazón dulce de dátiles y praliné. El fondo de vainilla, tonka y maderas le da profundidad.',top:['Bergamota','Canela','Nuez moscada'],heart:['Dátiles','Praliné y tuberosa'],base:['Vainilla','Tonka, mirra y maderas'],occasions:['Cena','Evento','Noche especial'],moment:'Tarde y noche',weather:'Clima fresco',style:'Cálido y especiado'}];
 const sizeMl=50;
 const unitPrice=21;
-const compactProducts=[
-{id:'30-eros-azul',name:'Eros Azul',ref:'Eros de Versace',stock:1,ml:30,price:12},
-{id:'30-eros-flame',name:'Eros Flame',ref:'Eros Flame de Versace',stock:1,ml:30,price:12},
-{id:'30-yara-candy',name:'Yara Candy',ref:'Yara Candy',stock:1,ml:30,price:12},
-{id:'30-yara-lattafa',name:'Rosa Dulce',ref:'Yara de Lattafa',stock:1,ml:30,price:12},
-{id:'30-valentino-donna',name:'Donna',ref:'Valentino Donna',stock:1,ml:30,price:12},
-{id:'30-sauvage-elixir',name:'Sauvage Elixir',ref:'Sauvage Elixir de Dior',stock:1,ml:30,price:12},
-{id:'30-bleu-chanel',name:'Bleu Intense',ref:'Bleu de Chanel',stock:1,ml:30,price:12},
-{id:'30-yum-yum',name:'Yum Yum',ref:'Yum Yum',stock:1,ml:30,price:12}
+const compactAvailableProducts=[
+{id:'30-eros-azul',name:'Eros Azul',ref:'Eros de Versace',stock:1,ml:30,price:12,image:'30ml-eros-azul.png',profile:'Fresco · cítrico · amaderado',tone:'blue'},
+{id:'30-eros-flame',name:'Eros Flame',ref:'Eros Flame de Versace',stock:1,ml:30,price:12,image:'30ml-eros-flame.png',profile:'Cálido · especiado · envolvente',tone:'red'},
+{id:'30-yara-candy',name:'Yara Candy',ref:'Yara Candy',stock:1,ml:30,price:12,image:'30ml-yara-candy.png',profile:'Frutal · dulce · cremoso',tone:'pink'},
+{id:'30-yara-lattafa',name:'Rosa Dulce',ref:'Yara de Lattafa',stock:1,ml:30,price:12,image:'30ml-yara-lattafa.png',profile:'Suave · cremoso · femenino',tone:'rose'},
+{id:'30-valentino-donna',name:'Donna',ref:'Valentino Donna',stock:1,ml:30,price:12,image:'30ml-valentino-donna.png',profile:'Floral · elegante · romántico',tone:'purple'},
+{id:'30-yum-yum',name:'Yum Yum',ref:'Yum Yum',stock:1,ml:30,price:12,image:'30ml-yum-yum.png',profile:'Dulce · cremoso · juvenil',tone:'coral'}
 ];
-const productImages={1:'producto-1-horizonte.png',2:'producto-2-bleu-intense.png',3:'producto-3-velvet-noir.png',4:'producto-4-liberte.png',5:'producto-5-noche-ambar.png',6:'producto-6-oro-urbano.png',7:'producto-7-intense-you.png',8:'producto-8-bella-vida.png',9:'producto-9-rosa-dulce.png',10:'producto-10-canela-real.png'};
+const productImages={1:'50ml-horizonte.png',2:'50ml-bleu-intense.png',3:'50ml-velvet-noir.png',4:'50ml-liberte.png',5:'50ml-noche-ambar.png',6:'50ml-oro-urbano.png',7:'50ml-intense-you.png',8:'50ml-bella-vida.png',9:'50ml-rosa-dulce.png',10:'50ml-canela-real.png'};
+const orderTones=['blue','blue','purple','gold','red','gold','red','rose','pink','amber'];
+const compactOrderProducts=products.map((product,index)=>({id:`30-order-${product.id}`,name:product.name,ref:product.ref,ml:30,price:12,image:productImages[product.id],profile:product.family,tone:orderTones[index],availability:'order'}));
+const compactProducts=[...compactAvailableProducts,...compactOrderProducts];
 const realPhotoAlt={
-  1:'Fotografía real de Horizonte, fragancia inspirada en Sauvage de Dior',
-  2:'Fotografía real de Bleu Intense, fragancia inspirada en Bleu de Chanel',
-  3:'Fotografía real de Velvet Noir, fragancia inspirada en Good Girl',
-  4:'Fotografía real de Liberté, fragancia inspirada en Libre de Yves Saint Laurent',
-  5:'Fotografía real de Noche Ámbar, fragancia inspirada en Baccarat Rouge 540',
-  6:'Fotografía real de Oro Urbano, fragancia inspirada en One Million',
-  7:'Fotografía real de Intense You, fragancia inspirada en Stronger With You Intensely',
-  8:'Fotografía real de Bella Vida, fragancia inspirada en La Vie Est Belle',
-  9:'Fotografía real de Rosa Dulce, fragancia inspirada en Yara de Lattafa',
-  10:'Fotografía real de Canela Real, fragancia inspirada en Khamrah de Lattafa'
+  1:'Imagen editorial de Horizonte, fragancia inspirada en Sauvage de Dior',
+  2:'Imagen editorial de Bleu Intense, fragancia inspirada en Bleu de Chanel',
+  3:'Imagen editorial de Velvet Noir, fragancia inspirada en Good Girl',
+  4:'Imagen editorial de Liberté, fragancia inspirada en Libre de Yves Saint Laurent',
+  5:'Imagen editorial de Noche Ámbar, fragancia inspirada en Baccarat Rouge 540',
+  6:'Imagen editorial de Oro Urbano, fragancia inspirada en One Million',
+  7:'Imagen editorial de Intense You, fragancia inspirada en Stronger With You Intensely',
+  8:'Imagen editorial de Bella Vida, fragancia inspirada en La Vie Est Belle',
+  9:'Imagen editorial de Rosa Dulce, fragancia inspirada en Yara de Lattafa',
+  10:'Imagen editorial de Canela Real, fragancia inspirada en Khamrah de Lattafa'
 };
 document.head.insertAdjacentHTML('beforeend','<style>.visual.has-photo:before,.visual.has-photo:after{display:none}.visual.has-photo{background:#171310}.visual.has-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}.product:hover .visual.has-photo img{transform:scale(1.035)}.visual.has-photo .badge{z-index:1}</style>');
 function decorateProductCards(){document.querySelectorAll('.product').forEach(card=>{const name=card.querySelector('h3')?.textContent,product=products.find(item=>item.name===name),visual=card.querySelector('.visual');if(!product||!visual||visual.classList.contains('has-photo'))return;const badge=visual.querySelector('.badge');visual.classList.add('has-photo');visual.innerHTML='';if(badge)visual.append(badge);const image=document.createElement('img');image.src=`assets/${productImages[product.id]}`;image.alt=realPhotoAlt[product.id]||`Presentación visual de ${product.name}`;image.loading='lazy';if(realPhotoAlt[product.id])image.classList.add('real-photo',`photo-${product.id}`);visual.append(image)})}
 new MutationObserver(decorateProductCards).observe(document.getElementById('products'),{childList:true});
 const catalogItems=[
  ...products.map(product=>({...product,ml:sizeMl,price:unitPrice})),
- ...compactProducts
+ ...compactAvailableProducts
 ];
 let cart=JSON.parse(localStorage.getItem('novaCart')||'[]')
  .filter(item=>catalogItems.some(product=>product.id===item.id))
@@ -51,12 +52,13 @@ const money=value=>new Intl.NumberFormat('es-EC',{style:'currency',currency:'USD
 function renderProducts(){
  const query=$('#search').value.toLowerCase();
  const visible=products.filter(product=>(filter==='Todos'||product.gender===filter)&&(`${product.name} ${product.ref} ${product.notes} ${product.family} ${product.occasions.join(' ')}`.toLowerCase().includes(query)));
- $('#products').innerHTML=visible.map(product=>`<article class="product"><div class="visual" style="--tone:${product.tone}"><span class="badge">${product.tag}</span></div><div class="product-info"><span class="inspired">${product.gender.toUpperCase()} · INSPIRADO EN ${product.ref.toUpperCase()}</span><h3>${product.name}</h3><p class="notes">${product.notes}</p><p class="stock-status"><span></span> Entrega inmediata · ${product.stock} ${product.stock===1?'unidad':'unidades'}</p><div class="product-bottom"><div class="price"><span>50 ML · $21 · 2 POR $38</span><b>$21,00</b></div></div><div class="product-actions"><button class="details-button" type="button" data-details="${product.id}">Ver aroma y ocasiones</button><button class="add" type="button" data-add="${product.id}">Agregar a mi selección</button></div></div></article>`).join('')||'<p>No encontramos fragancias que coincidan con tu búsqueda.</p>';
+ $('#products').innerHTML=visible.map(product=>`<article class="product"><div class="visual" style="--tone:${product.tone}"><span class="badge">${product.tag}</span></div><div class="product-info"><span class="inspired">${product.gender.toUpperCase()} · INSPIRADO EN ${product.ref.toUpperCase()}</span><h3>${product.name}</h3><p class="notes">${product.notes}</p><p class="product-profile">${product.family} · ideal para ${product.occasions.slice(0,2).join(' y ').toLowerCase()}</p><p class="stock-status"><span></span> Entrega inmediata · ${product.stock} ${product.stock===1?'unidad':'unidades'}</p><div class="product-bottom"><div class="price"><span>50 ML · $21 · 2 POR $40</span><b>$21,00</b></div></div><div class="product-actions"><button class="details-button" type="button" data-details="${product.id}">Ver aroma y ocasiones</button><button class="add" type="button" data-add="${product.id}">Agregar a mi selección</button></div></div></article>`).join('')||'<p>No encontramos fragancias que coincidan con tu búsqueda.</p>';
 }
 
 function renderCompactProducts(){
  const container=$('#compactProducts');if(!container)return;
- container.innerHTML=compactProducts.map(product=>`<article class="compact-card"><span class="compact-stock">1 UNIDAD DISPONIBLE</span><p>FRAGANCIA INSPIRADA EN</p><h3>${product.ref}</h3><div class="compact-price"><b>$12</b><small>30 ml · 2 por $22</small></div><button class="add" type="button" data-compact-add="${product.id}">Agregar a mi selección</button></article>`).join('');
+ const card=product=>`<article class="compact-card compact-${product.tone} ${product.availability==='order'?'is-order':''}"><div class="compact-image"><img src="assets/${product.image}" alt="${product.name}, fragancia inspirada en ${product.ref}, presentación de 30 ml" loading="lazy"><span class="compact-stock">${product.availability==='order'?'BAJO PEDIDO · 1–2 DÍAS':'DISPONIBLE AHORA'}</span></div><div class="compact-copy"><p>FRAGANCIA INSPIRADA EN</p><h3>${product.ref}</h3><span class="compact-profile">${product.profile}</span><div class="compact-price"><b>$12</b><small>30 ml · 2 por $22</small></div>${product.availability==='order'?`<a class="compact-order" target="_blank" rel="noopener" href="https://wa.me/593963104770?text=${encodeURIComponent(`Hola Nova Essence, quiero pedir ${product.ref} en presentación de 30 ml.`)}">Consultar bajo pedido</a>`:`<button class="add" type="button" data-compact-add="${product.id}">Agregar a mi selección</button>`}</div></article>`;
+ container.innerHTML=`<section class="compact-subsection"><div class="compact-subhead"><span>DISPONIBLES AHORA</span><p>Unidades listas para entrega, sujetas a confirmación.</p></div><div class="compact-grid">${compactAvailableProducts.map(card).join('')}</div></section><section class="compact-subsection compact-order-section"><div class="compact-subhead"><span>MÁS AROMAS DE 30 ML</span><p>Los mismos perfiles de 50 ml, disponibles bajo pedido en 1–2 días.</p></div><div class="compact-grid">${compactOrderProducts.map(card).join('')}</div></section>`;
 }
 
 function cartPricing(){
@@ -64,7 +66,7 @@ function cartPricing(){
  const count50=cart.filter(item=>item.ml===50).length;
  const count30=cart.filter(item=>item.ml===30).length;
  const other=cart.filter(item=>item.ml!==50&&item.ml!==30).reduce((sum,item)=>sum+item.price,0);
- const total=Math.floor(count50/2)*38+(count50%2)*21+Math.floor(count30/2)*22+(count30%2)*12+other;
+ const total=Math.floor(count50/2)*40+(count50%2)*21+Math.floor(count30/2)*22+(count30%2)*12+other;
  return {regular,total,discount:regular-total};
 }
 
@@ -75,7 +77,7 @@ function renderCart(){
  const pricing=cartPricing();
  $('#cartTotal').textContent=money(pricing.total);
  const promo=$('#cartPromo');
- if(promo)promo.textContent=pricing.discount>0?`Promoción aplicada: ahorras ${money(pricing.discount)}.`:'Promociones automáticas: 2 de 50 ml por $38 o 2 de 30 ml por $22.';
+ if(promo)promo.textContent=pricing.discount>0?`Promoción aplicada: ahorras ${money(pricing.discount)}.`:'Promociones automáticas: 2 de 50 ml por $40 o 2 de 30 ml por $22.';
 }
 
 function addToCart(item){
@@ -128,7 +130,7 @@ $('#products').onclick=event=>{
 };
 $('#compactProducts').onclick=event=>{
  const button=event.target.closest('[data-compact-add]');if(!button)return;
- const product=compactProducts.find(item=>item.id===button.dataset.compactAdd);if(product)addToCart({...product});
+ const product=compactAvailableProducts.find(item=>item.id===button.dataset.compactAdd);if(product)addToCart({...product});
 };
 $('#cartItems').onclick=event=>{if(event.target.dataset.remove!==undefined){cart.splice(Number(event.target.dataset.remove),1);renderCart()}};
 $('.filters').onclick=event=>{if(!event.target.dataset.filter)return;filter=event.target.dataset.filter;document.querySelectorAll('.filters button').forEach(button=>{const active=button===event.target;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active))});renderProducts()};
